@@ -16,11 +16,13 @@ source .venv/bin/activate
 
 ```
 pip install maturin
+python -m pip install --upgrade pip
 ```
 
 * Build and run
 
 ```
-maturin develop
+maturin build -r
+pip install --force target/wheels/mixed_project-0.1.0-cp38-cp38-manylinux_2_28_x86_64.whl
 python -c 'import mixed_project;mixed_project.run("xxxxxxxxx")'
 ```
